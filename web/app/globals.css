@@ -1,0 +1,75 @@
+:root {
+  --bg: #0a0e27;
+  --bg-raised: #0d1128;
+  --bg-well: #000000;
+  --line: rgba(245, 245, 240, 0.12);
+  --line-strong: rgba(245, 245, 240, 0.22);
+  --fg: #f5f5f0;
+  --fg-dim: #9a9a94;
+  --fg-faint: #6d6d68;
+  --accent-cyan: #00d9ff;
+  --accent-orange: #ff6b35;
+  --error: #ff4d4d;
+
+  --background: var(--bg);
+  --foreground: var(--fg);
+
+  color-scheme: dark;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: var(--font-body), "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+code,
+pre {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+}
+
+input,
+select,
+button,
+textarea {
+  font-family: inherit;
+}

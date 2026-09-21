@@ -1,0 +1,48 @@
+[project]
+name = "hub"
+version = "0.1.0"
+description = "NBA data hub pipeline: fetch, canonicalize, model, and export data for nba.svej.org"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.9",
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "umap-learn>=0.5",
+    "lightgbm>=4.5",
+    "joblib>=1.4",
+    "pydantic>=2.9",
+    "nba-api>=1.5",
+    "pyarrow>=17.0",
+    "httpx>=0.27",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "duckdb>=1.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hub"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Inserted into sys.path directly by pytest, independent of the editable-install
+# .pth file. Needed because macOS/iCloud can set the hidden flag on files under
+# ~/Desktop, and Python 3.13's site.py skips hidden .pth files — see
+# docs/decisions.md.
+pythonpath = ["src"]

@@ -1,0 +1,27 @@
+# Data (never committed; nightly refresh ships via `make deploy`, not git)
+data/
+web/public/data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Node
+node_modules/
+.next/
+web/out/
+.turbo/
+
+# Wrangler
+.wrangler/
+worker/.dev.vars
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.log
