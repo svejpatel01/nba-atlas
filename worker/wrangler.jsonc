@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nba-hub",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "../web/out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": {
+    "enabled": true
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "ASK_KV",
+      "id": "bbe9838e1cea489994c0752b510fe218"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "ASK_RATE_LIMIT",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 1,
+        "period": 60
+      }
+    }
+  ]
+}
