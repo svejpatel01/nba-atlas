@@ -3,6 +3,9 @@
   "name": "nba-hub",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-01",
+  "routes": [
+    { "pattern": "nba.svej.org", "custom_domain": true }
+  ],
   "assets": {
     "directory": "../web/out",
     "binding": "ASSETS",
